@@ -13,7 +13,7 @@ class BeaconsController < ApplicationController
 
   def show
     @beacons = Beacon.select("id", "major", "minor", "name")
-    render json: @beacons
+    render json: @beacons, :callback => params['callback']
   end
 
 
