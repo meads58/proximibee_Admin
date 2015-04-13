@@ -16,7 +16,7 @@ class BeaconsController < ApplicationController
   end
 
   def show
-    @beacons = Beacon.first
+    @beacons = Beacon.second
     render json: @beacons, :callback => params['callback'], :content_type => 'application/javascript'
   end
 
