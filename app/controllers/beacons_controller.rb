@@ -11,6 +11,12 @@ class BeaconsController < ApplicationController
     redirect_to beacons_path
   end
 
+  def show
+    @beacons = Beacon.select("id", "major", "minor", "name")
+    render json: @beacons
+  end
+
+
   def beacon_params
     params.require(:beacon).permit(:name, :major, :minor)
   end
