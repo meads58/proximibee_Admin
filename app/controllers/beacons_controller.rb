@@ -1,4 +1,8 @@
 class BeaconsController < ApplicationController
+
+  respond_to :json
+
+
   def index
   end
 
@@ -12,8 +16,12 @@ class BeaconsController < ApplicationController
   end
 
   def show
-    @beacons = Beacon.first
-    render json: @beacons, :callback => params['callback']
+    respond_to do |format|
+      format.html {render text: "Your data was sucessfully loaded. Thanks"}
+      format.json { render text: Beacon.first.to_json }
+    end
+    # @beacons = Beacon.first
+    # render json: @beacons, :callback => params['callback']
   end
 
 
