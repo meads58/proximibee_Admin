@@ -2,7 +2,6 @@ class BeaconsController < ApplicationController
 
   respond_to :json
 
-
   def index
   end
 
@@ -16,12 +15,13 @@ class BeaconsController < ApplicationController
   end
 
   def show
-    @beacons = Beacon.second
+    @beacons = Beacon.where("show_id = '2'")
     render json: @beacons, :callback => params['callback'], :content_type => 'application/javascript'
   end
 
-
   def beacon_params
-    params.require(:beacon).permit(:name, :major, :minor)
+    params.require(:beacon).permit(:name, :major, :minor, :show_id)
   end
+
 end
+

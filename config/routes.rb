@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  resources :shows
   resources :beacons
+
   root to: "beacons#index"
 
   # Example of regular route:

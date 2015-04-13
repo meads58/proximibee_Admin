@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413142542) do
+ActiveRecord::Schema.define(version: 20150413214907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 20150413142542) do
     t.integer  "minor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "show_id"
   end
 
+  add_index "beacons", ["show_id"], name: "index_beacons_on_show_id", using: :btree
+
+  create_table "shows", force: :cascade do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "beacon_id"
+  end
+
+  add_index "shows", ["beacon_id"], name: "index_shows_on_beacon_id", using: :btree
+
+  add_foreign_key "beacons", "shows"
+  add_foreign_key "shows", "beacons"
 end

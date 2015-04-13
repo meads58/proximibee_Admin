@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'beacons' do
+
   context 'no beacons added' do
     scenario 'should display a prompt to add a beacon' do
       visit '/beacons'
