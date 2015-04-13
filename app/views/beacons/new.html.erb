@@ -5,6 +5,6 @@
   <%= f.text_field :major%>
   <%= f.label :minor%>
   <%= f.text_field :minor%>
-  <%= f.collection_select(:show_id, Show.all, :id, :name) %>
+  <%= f.collection_select(:show_id,Show.all,:id,:name)%>
   <%= f.submit "Add Beacon"%>
 <%end%>
