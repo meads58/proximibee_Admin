@@ -14,8 +14,9 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @shows = Show.all
-    render json: @shows, :callback => params['callback'], :content_type => 'application/javascript'
+    @show_id = params[:id]
+    @beacons = Beacon.where("show_id = '#{@show_id}'")
+    render json: @beacons, :callback => params['callback'], :content_type => 'application/javascript'
   end
 
 end
