@@ -1,0 +1,9 @@
+<%=form_for Beacon.new do |f|%>
+  <%=f.label :name%>
+  <%= f.text_field :name%>
+  <%=f.label :major%>
+  <%= f.text_field :major%>
+  <%=f.label :minor%>
+  <%= f.text_field :minor%>
+  <%= f.submit "Add Beacon"%>
+<%end%>
