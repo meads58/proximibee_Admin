@@ -5,3 +5,14 @@
   <%= f.text_field :location%>
   <%= f.submit "Add Show"%>
 <%end%>
+
+<% if @show_all.any? %>
+ <h2>Shows</h2>
+  <%@show_all.each do |show|%>
+
+  <li>
+    <%=link_to show.name, new_show_beacon_path(show)%>
+    <%= link_to "Delete", show_path(show), method: :delete %>
+  </li>
+  <%end%>
+<%end%>

@@ -1,20 +1,17 @@
 <%if Product.all.any?%>
-  <%Product.all.each do |product|%>
-
-<table class="fixed_headers">
-  <tr>
-    <th>Product</th>
-    <th>Price</th>
-    <th>Beacon</th>
-  </tr>
-
-  <tr>
-    <td><%=product.name%></td>
-    <td><%=product.price%></td>
-    <td><%=@beacon%></td>
-
-  </tr>
-</table>
-  <%end%>
+  <table class="fixed_headers">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Beacon</th>
+    </tr>
+    <%Product.all.each do |product|%>
+    <tr>
+      <td><%=product.name%></td>
+      <td><%=product.price%></td>
+    </tr>
+    <%end%>
+  </table>
 <%end%>
+
 

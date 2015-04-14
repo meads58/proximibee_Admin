@@ -4,7 +4,6 @@ class BeaconsController < ApplicationController
 
   def index
     @products = Product.all
-
   end
 
   def new
@@ -17,12 +16,12 @@ class BeaconsController < ApplicationController
     show = Show.find(params[:show_id])
     show.beacons.create(beacon_params)
     flash[:notice] = "Beacon successfully added"
-    redirect_to show_beacons_path
+    redirect_to new_show_beacon_path(show)
   end
 
 
   def show
-
+    @products = Product.all
   end
 
   def beacon_params

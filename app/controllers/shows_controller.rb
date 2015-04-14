@@ -2,6 +2,7 @@ class ShowsController < ApplicationController
 
   def new
     @show = Show.new
+    @show_all = Show.all
   end
 
   def index
@@ -12,9 +13,6 @@ class ShowsController < ApplicationController
     Show.create(show_params)
     flash[:notice] = "Show successfully added"
     redirect_to shows_path
-  end
-
-  def update
   end
 
   def show_params

@@ -7,3 +7,18 @@
   <%=f.text_field :url%>
   <%=f.submit "Add Product"%>
 <%end%>
+
+<%if Product.all.any?%>
+  <table class="fixed_headers">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+    </tr>
+    <%Product.all.each do |product|%>
+    <tr>
+      <td><%=product.name%></td>
+      <td><%=product.price%></td>
+    </tr>
+    <%end%>
+  </table>
+<%end%>
