@@ -24,12 +24,18 @@ class ShowsController < ApplicationController
   def show
     @show = Show.find params[:id]
     @beacons = @show.beacons
-
     respond_to do |format|
       format.json do
         render json: @show, :callback => params['callback'], :content_type => 'text/json'
       end
     end
+  end
+
+   def destroy
+    @show= Show.find(params[:id])
+    @show.destroy
+    flash[:notice] = 'Show deleted successfully'
+    redirect_to shows_path
   end
 
   def new_beacon

@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
   def new
   end
 
+  def index
+    # @beacon = Beacon.find params[:id]
+    @products = Product.all
+  end
+
   def create
     Product.create(product_param)
     flash[:notice] = "Beacon successfully added"

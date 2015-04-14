@@ -5,6 +5,26 @@
   <%= f.text_field :major%>
   <%= f.label :minor%>
   <%= f.text_field :minor%>
-  <%= f.collection_select(:show_id,Show.all,:id,:name)%>
   <%= f.submit "Add Beacon"%>
+<%end%>
+
+<%if @beacon_list.any?%>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Major</th>
+      <th>Minor</th>
+    </tr>
+
+    <%@beacon_list.each do |beacon|%>
+
+    <tr>
+      <td><%=beacon.name%></td>
+      <td><%=beacon.major%></td>
+      <td><%=beacon.minor%></td>
+      <td><%=link_to "Assign Products", show_beacons_path(beacon)%></td>
+    </tr>
+
+    <%end%>
+  </table>
 <%end%>

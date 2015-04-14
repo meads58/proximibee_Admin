@@ -3,22 +3,26 @@ class BeaconsController < ApplicationController
   respond_to :json
 
   def index
+    @products = Product.all
+
   end
 
   def new
     @show = Show.find(params[:show_id])
     @beacon = Beacon.new
+    @beacon_list = Beacon.all
   end
 
   def create
-    Beacon.create(beacon_params)
+    show = Show.find(params[:show_id])
+    show.beacons.create(beacon_params)
     flash[:notice] = "Beacon successfully added"
     redirect_to show_beacons_path
   end
 
+
   def show
-    @beacons = Beacon.where("show_id = '2'")
-    render json: @beacons, :callback => params['callback'], :content_type => 'application/javascript'
+
   end
 
   def beacon_params

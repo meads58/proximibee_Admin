@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :shows do
     resources :beacons
-    collection do
-      post 'new_beacon' => 'shows#new_beacon'
-    end
+    # collection do
+    #   post 'new_beacon' => 'shows#new_beacon'
+    # end
   end
 
   resources :products

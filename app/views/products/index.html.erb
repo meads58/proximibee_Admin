@@ -11,8 +11,10 @@
   <tr>
     <td><%=product.name%></td>
     <td><%=product.price%></td>
-    <td><%=collection_select(:beacon, :beacon_id,Beacon.all,:id,:name)%></td>
+    <td><%=@beacon%></td>
+
   </tr>
 </table>
   <%end%>
 <%end%>
+

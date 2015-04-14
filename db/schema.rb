@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414115705) do
+ActiveRecord::Schema.define(version: 20150414165905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,11 @@ ActiveRecord::Schema.define(version: 20150414115705) do
     t.decimal  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "url"
+    t.integer  "beacon_id"
   end
+
+  add_index "products", ["beacon_id"], name: "index_products_on_beacon_id", using: :btree
 
   create_table "shows", force: :cascade do |t|
     t.string   "name"
@@ -45,5 +49,6 @@ ActiveRecord::Schema.define(version: 20150414115705) do
   add_index "shows", ["beacon_id"], name: "index_shows_on_beacon_id", using: :btree
 
   add_foreign_key "beacons", "shows"
+  add_foreign_key "products", "beacons"
   add_foreign_key "shows", "beacons"
 end

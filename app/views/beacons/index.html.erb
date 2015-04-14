@@ -1,0 +1,10 @@
+<%if @products.any?%>
+
+  <%@products.each do |product|%>
+  <li>
+    <%=product.name%>
+    check_box :select_product
+  </li>
+
+  <%end%>
+<%end%>

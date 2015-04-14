@@ -8,6 +8,7 @@ feature 'product' do
       click_on "Add Products"
       fill_in "Name", with: "12 piece knife set"
       fill_in "Price", with: 24.95
+      fill_in "Url", with: "coolpics/image=2.com"
       click_on "Add Product"
       expect(page).to have_content "Name: 12 piece knife set"
       expect(page).to have_content "Price: £24.95"
