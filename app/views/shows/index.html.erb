@@ -1,0 +1,13 @@
+<% if @shows.any? %>
+
+  <%= form_tag new_beacon_shows_path do |f|%>
+    <input type="text" name="show_id", value="<%= @shows.first.id %>">
+    <%=submit_tag "Select Show" %>
+  <%end%>
+
+<% end %>
+
+<h2>
+  <%=link_to "Add Show", new_show_path() %>
+</h2>
+

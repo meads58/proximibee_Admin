@@ -1,0 +1,18 @@
+<%if Product.all.any?%>
+  <%Product.all.each do |product|%>
+
+<table class="fixed_headers">
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Beacon</th>
+  </tr>
+
+  <tr>
+    <td><%=product.name%></td>
+    <td><%=product.price%></td>
+    <td><%=collection_select(:beacon, :beacon_id,Beacon.all,:id,:name)%></td>
+  </tr>
+</table>
+  <%end%>
+<%end%>

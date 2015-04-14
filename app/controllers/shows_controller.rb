@@ -1,12 +1,20 @@
 class ShowsController < ApplicationController
 
   def new
+    @show = Show.new
+  end
+
+  def index
+    @shows = Show.all
   end
 
   def create
     Show.create(show_params)
     flash[:notice] = "Show successfully added"
-    redirect_to beacons_path
+    redirect_to shows_path
+  end
+
+  def update
   end
 
   def show_params
@@ -14,9 +22,19 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @show_id = params[:id]
-    @beacons = Beacon.where("show_id = '#{@show_id}'")
-    render json: @beacons, :callback => params['callback'], :content_type => 'application/javascript'
+    @show = Show.find params[:id]
+    @beacons = @show.beacons
+
+    respond_to do |format|
+      format.json do
+        render json: @show, :callback => params['callback'], :content_type => 'text/json'
+      end
+    end
+  end
+
+  def new_beacon
+   @show = Show.find params[:show_id]
+   redirect_to new_show_beacon_path @show
   end
 
 end

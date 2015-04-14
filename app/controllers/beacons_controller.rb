@@ -6,12 +6,14 @@ class BeaconsController < ApplicationController
   end
 
   def new
+    @show = Show.find(params[:show_id])
+    @beacon = Beacon.new
   end
 
   def create
     Beacon.create(beacon_params)
     flash[:notice] = "Beacon successfully added"
-    redirect_to beacons_path
+    redirect_to show_beacons_path
   end
 
   def show

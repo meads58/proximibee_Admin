@@ -4,10 +4,16 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :shows
-  resources :beacons
+  resources :shows do
+    resources :beacons
+    collection do
+      post 'new_beacon' => 'shows#new_beacon'
+    end
+  end
 
-  root to: "beacons#index"
+  resources :products
+
+  root to: "shows#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
