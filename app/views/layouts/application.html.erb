@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-brand">
+        <%=link_to image_tag('logo.png',  size: "25"), root_path, method: :get%>
+      </div>
+    </div>
+  </nav>
+
 <%= notice%>
 <%= yield %>
 
