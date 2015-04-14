@@ -5,7 +5,6 @@ feature 'beacons' do
   context 'no beacons added' do
     scenario 'should display a prompt to add a beacon' do
       visit '/beacons'
-      expect(page).to have_content 'No Beacons listed'
       expect(page).to have_link 'Add Beacon'
     end
   end
