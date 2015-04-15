@@ -8,6 +8,10 @@
   <%= f.submit "Add Beacon"%>
 <%end%>
 
+
+<h2 class=tableHeading> Avaliable Beacons</h2>
+<%=link_to "Assign Products", show_beacons_path()%>
+
 <%if @beacons.any?%>
   <table>
     <tr>
@@ -22,7 +26,6 @@
       <td><%=beacon.name%></td>
       <td><%=beacon.major%></td>
       <td><%=beacon.minor%></td>
-      <td><%=link_to "Assign Products", show_beacons_path(beacon)%></td>
       <!-- <td><%= link_to "Delete", show_beacons_path(beacon), method: :delete %></td> -->
     </tr>
 
