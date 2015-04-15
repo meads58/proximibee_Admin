@@ -1,8 +1,17 @@
 <%= form_for @product do |f| %>
-  <%=f.label :product %>
-  <%=collection_select(:beacon, :beacon_id,Beacon.all,:id,:name)%>
+  <%=f.label :beacon_id %>
+  <%=f.text_field :beacon_id%>
   <%=f.label :url%>
   <%=f.text_field :url, :value => "https://arcane-citadel-3693.herokuapp.com" + @product.image.url(:medium)%>
   <%=f.submit %>
 <% end %>
+
+<%if @beacon.any?%>
+  <%@beacon.each do |beacon|%>
+  <li>
+    <%=beacon.name%>
+    <%=beacon.id%>
+  </li>
+  <%end%>
+<%end%>
 
