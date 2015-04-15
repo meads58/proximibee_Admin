@@ -17,6 +17,10 @@ nav {
     background-color: rgb(85,60,82);
 }
 
+body{
+  margin: 0 auto;
+}
+
 .navbar-brand{
   padding-top: 25px;
   padding-right: 50px;

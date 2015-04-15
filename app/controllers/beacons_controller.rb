@@ -9,6 +9,7 @@ class BeaconsController < ApplicationController
   def new
     @show = Show.find(params[:show_id])
     @beacon = Beacon.new
+    @beacons = @show.beacons
     @beacon_list = Beacon.all
   end
 

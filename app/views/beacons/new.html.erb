@@ -8,7 +8,7 @@
   <%= f.submit "Add Beacon"%>
 <%end%>
 
-<%if @beacon_list.any?%>
+<%if @beacons.any?%>
   <table>
     <tr>
       <th>Name</th>
@@ -16,7 +16,7 @@
       <th>Minor</th>
     </tr>
 
-    <%@beacon_list.each do |beacon|%>
+    <%@beacons.each do |beacon|%>
 
     <tr>
       <td><%=beacon.name%></td>
