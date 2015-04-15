@@ -2,7 +2,7 @@
   <%=f.label :product %>
   <%=collection_select(:beacon, :beacon_id,Beacon.all,:id,:name)%>
   <%=f.label :url%>
-  <%=f.text_field :url, :value => "http://localhost:3000" + @product.image.url(:medium)%>
+  <%=f.text_field :url, :value => "https://arcane-citadel-3693.herokuapp.com" + @product.image.url(:medium)%>
   <%=f.submit %>
 <% end %>
 
