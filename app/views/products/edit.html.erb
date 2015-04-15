@@ -2,7 +2,7 @@
   <%=f.label :beacon_id %>
   <%=f.text_field :beacon_id%>
   <%=f.label :url%>
-  <%=f.text_field :url, :value => "https://arcane-citadel-3693.herokuapp.com" + @product.image.url(:medium)%>
+  <%=f.text_field :url, :value => @product.image.url(:medium)%>
   <%=f.submit %>
 <% end %>
 
