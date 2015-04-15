@@ -1,5 +1,5 @@
 <%= form_for @product do |f| %>
-  <%= f.label :product %>
+  <%=f.label :product %>
   <%=collection_select(:beacon, :beacon_id,Beacon.all,:id,:name)%>
-  <%= f.submit %>
+  <%=f.submit %>
 <% end %>

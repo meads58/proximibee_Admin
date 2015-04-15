@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(product_param)
-    flash[:notice] = "Beacon successfully added"
+    flash[:notice] = "Product successfully added"
     redirect_to new_product_path()
   end
 
@@ -29,8 +29,15 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    flash[:notice] = 'Product deleted successfully'
+    redirect_to new_product_path
+  end
+
   def product_param
-    params.require(:product).permit(:name, :price)
+    params.require(:product).permit(:name, :price, :owner, :image)
   end
 
   def product_beacon_param

@@ -1,23 +1,30 @@
-<%=form_for Product.new do |f|%>
+<%=form_for Product.new, html: {multipart: true}  do |f|%>
+  <%=f.label :owner%>
+  <%=f.text_field :owner%>
   <%=f.label :name%>
   <%=f.text_field :name%>
   <%=f.label :price%>
   <%=f.text_field :price%>
    <%=f.label :url%>
   <%=f.text_field :url%>
+  <%=f.file_field :image%>
   <%=f.submit "Add Product"%>
 <%end%>
 
 <%if Product.all.any?%>
   <table class="fixed_headers">
     <tr>
+      <th>Owner</th>
       <th>Product</th>
       <th>Price</th>
     </tr>
     <%Product.all.each do |product|%>
     <tr>
+      <td><%=product.owner%></td>
       <td><%=product.name%></td>
       <td><%=product.price%></td>
+      <td><%= image_tag product.image.url(:thumb) %></td>
+      <td><%= link_to "Delete", product_path(product), method: :delete %></td>
     </tr>
     <%end%>
   </table>

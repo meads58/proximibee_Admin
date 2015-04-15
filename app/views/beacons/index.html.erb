@@ -1,6 +1,7 @@
 
   <%@products.each do |product|%>
   <li>
+    <%= product.owner%>
     <%= link_to product.name, edit_product_path(product) %>
     <%= product.beacon_id%>
   </li>
