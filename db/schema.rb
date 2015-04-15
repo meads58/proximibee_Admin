@@ -48,12 +48,8 @@ ActiveRecord::Schema.define(version: 20150415104635) do
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "beacon_id"
   end
-
-  add_index "shows", ["beacon_id"], name: "index_shows_on_beacon_id", using: :btree
 
   add_foreign_key "beacons", "shows"
   add_foreign_key "products", "beacons"
-  add_foreign_key "shows", "beacons"
 end

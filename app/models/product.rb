@@ -4,4 +4,8 @@ class Product < ActiveRecord::Base
 
   belongs_to :beacon, dependent: :destroy
 
+  def image_url
+    image.url(:medium)
+  end
+
 end

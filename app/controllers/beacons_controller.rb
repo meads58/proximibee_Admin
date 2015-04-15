@@ -20,6 +20,13 @@ class BeaconsController < ApplicationController
     redirect_to new_show_beacon_path(show)
   end
 
+  def destroy
+    show = Show.find(params[:show_id])
+    beacon = Beacon.find(params[:id])
+    beacon.destroy
+    flash[:notice] = 'Beacon deleted successfully'
+    redirect_to new_show_beacon_path
+  end
 
   def show
     @products = Product.all

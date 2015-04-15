@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
     beacon = Beacon.find(params[:id])
     @product = Product.find(params[:id])
     @product.update(product_beacon_param)
+    @product.update(product_url_param)
     flash[:notice] = "Product added to Beacon"
     redirect_to '/'
   end
@@ -42,5 +43,9 @@ class ProductsController < ApplicationController
 
   def product_beacon_param
     params.require(:beacon).permit(:beacon_id)
+  end
+
+  def product_url_param
+    params.require(:product).permit(:url)
   end
 end
