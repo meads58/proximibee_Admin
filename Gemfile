@@ -26,6 +26,7 @@ gem 'rails_12factor', '~> 0.0.3'
 gem "responders"
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'paperclip', '~> 4.2.1'
+gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
