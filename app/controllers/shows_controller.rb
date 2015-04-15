@@ -21,7 +21,7 @@ class ShowsController < ApplicationController
 
   def show
     @show = Show.find params[:id]
-    @beacons = @show.beacons
+    # @beacons = @show.beacons
     respond_to do |format|
       format.json do
         render json: @show, :callback => params['callback'], :content_type => 'text/json'
