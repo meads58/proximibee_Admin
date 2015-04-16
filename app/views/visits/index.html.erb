@@ -2,7 +2,7 @@
 
  <% if @visits.any? %>
    <h2>Visits</h2>
-    <%@visits.each do |visit|%>
+    <%@visits.reverse.each do |visit|%>
 
     <li>
       <h3>Beacon <%=visit.beacon.name%> was visited at <%=visit.created_at%></h3>
