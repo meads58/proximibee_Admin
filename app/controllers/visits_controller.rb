@@ -11,4 +11,8 @@ class VisitsController < ApplicationController
     params.require(:visit).permit(:beacon_id, :timestamp)
   end
 
+  def index
+    @visits = Visit.all
+  end
+
 end

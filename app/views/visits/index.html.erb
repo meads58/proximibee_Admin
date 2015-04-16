@@ -1,0 +1,14 @@
+<main>
+
+ <% if @visits.any? %>
+   <h2>Visits</h2>
+    <%@visits.each do |visit|%>
+
+    <li>
+      <h3><%=visit.timestamp%></h3>
+      <h3><%=visit.beacon.name%></h3>
+    </li>
+    <%end%>
+  <%end%>
+
+</main>
