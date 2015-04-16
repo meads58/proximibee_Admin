@@ -8,22 +8,25 @@
   <%=f.file_field :image%>
   <%=f.submit "Add Product"%>
 <%end%>
-
-<%if Product.all.any?%>
-  <table class="fixed_headers">
-    <tr>
-      <th>Owner</th>
-      <th>Product</th>
-      <th>Price</th>
-    </tr>
-    <%Product.all.each do |product|%>
-    <tr>
-      <td><%=product.owner%></td>
-      <td><%=product.name%></td>
-      <td><%=product.price%></td>
-      <td><%= image_tag product.image.url(:thumb) %></td>
-      <td><%= link_to "Delete", product_path(product), method: :delete %></td>
-    </tr>
-    <%end%>
-  </table>
-<%end%>
+<main>
+  <%if Product.all.any?%>
+    <table class="fixed_headers">
+      <tr>
+        <th>Owner</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Delete</th>
+      </tr>
+      <%Product.all.each do |product|%>
+      <tr>
+        <td><%=product.owner%></td>
+        <td><%=product.name%></td>
+        <td><%=product.price%></td>
+        <td><%= image_tag product.image.url(:thumb) %></td>
+        <td><%= link_to "Delete", product_path(product), method: :delete %></td>
+      </tr>
+      <%end%>
+    </table>
+  <%end%>
+</main>

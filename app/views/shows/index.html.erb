@@ -1,17 +1,21 @@
-<% if @shows.any? %>
- <h2>Shows</h2>
-  <%@shows.each do |show|%>
 
-  <li>
-    <h3><%=link_to show.name, new_show_beacon_path(show)%></h3>
-  </li>
+<div id="main">
+  <% if @shows.any? %>
+   <h2>Shows</h2>
+    <%@shows.each do |show|%>
+
+    <li>
+      <h3><%=link_to show.name, new_show_beacon_path(show)%></h3>
+    </li>
+    <%end%>
   <%end%>
-<%end%>
 
-<h2>
-  <%=link_to "Add/Delete Shows", new_show_path() %>
-</h2>
+  <h2>
+    <%=link_to "Add/Delete Shows", new_show_path() %>
+  </h2>
 
-<h2>
-  <%=link_to "Add Products", new_product_path() %>
-</h2>
+  <h2>
+    <%=link_to "Add Products", new_product_path() %>
+  </h2>
+
+</div>

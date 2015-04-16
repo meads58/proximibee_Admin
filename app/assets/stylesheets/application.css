@@ -13,12 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face{
+  font-family: 'litera';
+  src: font-url('litera.ttf') format('truetype')
+}
+
 nav {
     background-color: rgb(85,60,82);
 }
 
+footer {
+    background-color: rgb(85,60,82);
+}
+
+header, nav, article, footer, address {
+    display: block;
+}
+
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 200px;
+}
+
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 100px;
+}
+
+#main{
+  font: 'litera';
+    padding-top: 25px;
+    padding-right: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+}
+
 body{
   margin: 0 auto;
+  /*font: italic bold 12px/30px Georgia, serif;*/
+  font: 'litera';
 }
 
 .navbar-brand{
