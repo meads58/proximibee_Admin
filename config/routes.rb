@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     # end
   end
 
+  post :visits, to: 'visits#create'
+
   resources :products
 
   root to: "shows#index"
