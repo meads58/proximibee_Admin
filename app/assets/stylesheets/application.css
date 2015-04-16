@@ -16,45 +16,54 @@
 
 @font-face{
   font-family: 'litera';
-  src: font-url('litera.ttf') format('truetype')
+  src:url('litera.ttf') format('truetype')
 }
 
 nav {
-    background-color: rgb(85,60,82);
+  background-image: url("honeycomb.gif");
+  background-color: white;
 }
 
 footer {
-    background-color: rgb(85,60,82);
+  background-color: rgb(85,60,82);
 }
 
 header, nav, article, footer, address {
-    display: block;
+  display: block;
 }
 
 table{
-    border: 1px solid black;
-    table-layout: fixed;
-    width: 200px;
+  border: 1px solid black;
+  table-layout: fixed;
+  width: 200px;
 }
 
 th, td {
-    border: 1px solid black;
-    overflow: hidden;
-    width: 100px;
+  border: 1px solid black;
+  overflow: hidden;
+  width: 100px;
 }
 
-#main{
-  font: 'litera';
+main{
+  font-family: 'litera';
     padding-top: 25px;
     padding-right: 50px;
     padding-bottom: 25px;
     padding-left: 50px;
 }
 
+input[type=submit]{
+  font-family: 'litera';
+}
+
+input[type=file]{
+  font-family: 'litera';
+}
+
 body{
   margin: 0 auto;
-  /*font: italic bold 12px/30px Georgia, serif;*/
-  font: 'litera';
+  background-color: #CDB5CD;
+  font-family: 'litera';
 }
 
 .navbar-brand{
@@ -65,8 +74,12 @@ body{
 
 }
 
+#product_image{
+  font-family: 'litera';
+}
+
 img {
-   padding:1px;
-   border:1px solid #021a40;
-   background-color:red
+ /*  padding:1px;
+   border:1px solid #021a40;*/
+
 }
