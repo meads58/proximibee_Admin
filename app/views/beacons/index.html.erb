@@ -1,9 +1,10 @@
-<h2 class=productList>Product to Beacon Assignment</h2>
+<h2 class=productList align="center">Product to Beacon Assignment</h2>
+<div align="center">
 <%@products.each do |product|%>
   <li>
-    <%= product.owner%>
+    <%= product.owner%>:
     <%= link_to product.name, edit_product_path(product) %>
     <%= product.beacon_id%>
   </li>
 <%end%>
-
+</div>

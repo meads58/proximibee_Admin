@@ -1,3 +1,4 @@
+<div align="center">
 <%= form_for @product do |f| %>
   <%=f.label :beacon_id %>
   <%=f.text_field :beacon_id%>
@@ -8,10 +9,11 @@
 
 <%if @beacon.any?%>
   <%@beacon.each do |beacon|%>
+  <br>
   <li>
     <%=beacon.name%>
     <%=beacon.id%>
   </li>
   <%end%>
 <%end%>
-
+</div>

@@ -1,3 +1,4 @@
+<div align="center">
 <%=form_for [@show, @beacon] do |f|%>
   <%= f.label :name%>
   <%= f.text_field :name%>
@@ -7,11 +8,10 @@
   <%= f.text_field :minor%>
   <%= f.submit "Add Beacon"%>
 <%end%>
-
-
+</div>
+<div align="center">
 <h2 class=tableHeading> Avaliable Beacons</h2>
 <%=link_to "Assign Products", show_beacons_path()%>
-
 <%if @beacons.any?%>
   <table>
     <tr>
@@ -32,3 +32,4 @@
     <%end%>
   </table>
 <%end%>
+</div>

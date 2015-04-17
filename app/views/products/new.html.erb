@@ -1,3 +1,4 @@
+<div align="center">
 <%=form_for Product.new, html: {multipart: true}  do |f|%>
   <%=f.label :owner%>
   <%=f.text_field :owner%>
@@ -8,8 +9,11 @@
   <%=f.file_field :image%>
   <%=f.submit "Add Product" %>
 <%end%>
+</div>
 <main>
   <%if Product.all.any?%>
+  <div align="center">
+  <br><br><br><br>
     <table class="fixed_headers">
       <tr>
         <th>Owner</th>
@@ -28,5 +32,6 @@
       </tr>
       <%end%>
     </table>
+    </div>
   <%end%>
 </main>

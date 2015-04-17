@@ -1,25 +1,24 @@
 
 <main>
-  <% if @shows.any? %>
-   <h2>Shows</h2>
+
+<h1 align="center">Options</h1>
+
+<div class="shows">
+
+  <%=link_to image_tag('calendar.png'), new_show_path() %>
+
+  <%=link_to image_tag('product.png'), new_product_path() %>
+
+  <%=link_to image_tag('graph.png'), visits_path() %>
+</div>
+<div class="or-spacer2">
+  <div class="mask2"></div>
+</div>
+    <% if @shows.any? %>
+   <h1 align="center" style="margin-bottom:50px;">Collections</h1>
     <%@shows.each do |show|%>
 
-    <li>
-      <h3><%=link_to show.name, new_show_beacon_path(show)%></h3>
-    </li>
+      <h3 align="center"><%=link_to show.name, new_show_beacon_path(show)%></h3>
     <%end%>
   <%end%>
-
-  <h2>
-    <%=link_to "Add/Delete Shows", new_show_path() %>
-  </h2>
-
-  <h2>
-    <%=link_to "Add Products", new_product_path() %>
-  </h2>
-
-  <h2>
-    <%=link_to "Visits", visits_path() %>
-  </h2>
-
 </main>
