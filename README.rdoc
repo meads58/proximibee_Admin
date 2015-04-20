@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My final project at Makers Academy was to work in a team of 5 creating a phone app that can change the list of products when in the range of a specific beacon. A beacon is a bluetooth transmitting device whose signal can be picked up by the bluetooth received on your phone.
 
-Things you may want to cover:
+We successfully created a phone app using phone-gap which would change a product list, allow you to select and add to a shopping basket and view your orders. There was also a feature to view an augmented reality demo of the product.
 
-* Ruby version
+To manage the beacons and products I was part of the sub-team to create this Admin system. Written in Ruby On Rails with a PSQL database it would send an api of product details to the phone app.. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Key features of this application are:
+  - Create a collection to hold a set of beacons
+  - Add/delete beacons to collection.
+  - Create a set of products with a price and a picture uploaded via the paperclip gem.
+  - Assign a set of products to a beacon that will be displayed when in range.
+  - Create a json API that is send to the phone to set up what each beacon will display.
+  
+### Problems and Solutions
+  - None of use knew anything about beacons before this project. Our first step was to work out how to receive a signal from a beacon and we found a codova plugin through the evothings workbench.
+  - Constructing the json API in the right format. Found a solution using as_json method in rails and overriding it to include a list of models to construct the api with. The controller then used a respond_to method to pass the api back to the phone app with.
+  - Storing images on heroku required a AWS account set up but there was a lot of issues with the version of the 'aws-sdk' gem and rails 4.2.1. Along with setting up the correct access rights on AWS this proved a tough task but it all worked out in the end.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
