@@ -1,4 +1,5 @@
-== README
+== README 
+[![Code Climate](https://codeclimate.com/github/meads58/proximibee_Admin/badges/gpa.svg)](https://codeclimate.com/github/meads58/proximibee_Admin)
 
 My final project at Makers Academy was to work in a team of 5 creating a phone app that can change the list of products when in the range of a specific beacon. A beacon is a bluetooth transmitting device whose signal can be picked up by the bluetooth received on your phone.
 
