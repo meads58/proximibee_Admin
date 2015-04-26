@@ -5,18 +5,18 @@ Our final team project at Makers Academy was to create a Beacon network for pers
 
 {Proximibee Demo}[https://youtu.be/5xSJhFoEBcs]
 
-## What problem was being solved?
+=== What problem was being solved?
 Online shopping is great but you can't touch or try on the product and you have to filter and search to find what you want.  Whilst shopping instore you can sample the product but you don't know if you are getting the best deal and you have to queue to pay.
 
 What if you could enter a store for a personalised shopping experience, receive discounts, view additional product information and pay all from your phone.
 
-## What is Proximibee
+=== What is Proximibee
 Our answer is the Proximibee phone app. A phone app that can dynamically change the product list when you move around the a store.
 
 Using iBeacon technology to set up an indoor location network the Proximibee app can pick up your position to a few inches without the need of GPS.
 
 
-## How does it work
+=== How does it work
 Place iBeacon devices next to your product range in the store. Then assign the products and prices to each individual iBeacon through the Admin system.
 
 A json API is then sent from the Admin sytem to the phone app with all the updated details. When a customer is in range of a Beacon their Proximibee phone app knows what products to display and will change the view to display this product range.
@@ -27,7 +27,7 @@ Want some additional product information? No problem, using the augmented realit
 
 Discounts can be applied real-time as shoppers are moving around the store to encourage purchases
 
-## What we actually achieved
+=== What we actually achieved
 We successfully created a working phone app using phone-gap with the following features:
   -Admin system to manage the adding and updating of product names, price and images.
   -The assignment of Beacons to a product range.
@@ -41,14 +41,14 @@ We successfully created a working phone app using phone-gap with the following f
 
 To manage the beacons and products I was part of the sub-team to create this gitHub repo which is the Admin system. Written in Ruby On Rails with a PSQL database it would send an api of product details to the phone app..
 
-## Next stage
+=== Next stage
 If we had more time to continue on the next stage would be to implement the following
   -Customer sign-up and log-on functionality so we can build a user database for promotions and discount rewards tailored to each user.
   -Login functionality to the Admin system
   -Data capture and reporting of shopper trends and location.
 
 
-### Technology used:
+=== Technology used:
   - Estomote iBeacons
   - Phone-gap
   - javascript (phone app)
@@ -66,7 +66,7 @@ If we had more time to continue on the next stage would be to implement the foll
   - Assign a set of products to a beacon that will be displayed when in range.
   - Create a json API that is send to the phone to set up what each beacon will display.
 
-### Problems and Solutions
+=== Problems and Solutions
   - None of use knew anything about beacons before this project: Our first step was to work out how to receive a signal from a beacon and we found a codova plugin through the evothings workbench. Playing around with this code we discovered how to program our Beacons to create our first MVP which showed a different colour on the screen when in range a Beacon.
   - Managing the Beacons and product lists: We wanted a node.js backend with a mongoDB for its speed/performance to capture the Beacon location real time from each customers phone. After trial of node.js/express.js we didn't have a suitable solution and it was decided to use Ruby On Rails so we could move forward. Collectively we had good knowledge of Rails amongst the team and it worked out very well as a prototype to prove what we can do with the Beacon network.
   - Constructing the json API in the right format: Found a solution using as_json method in rails and overriding it to include a list of models to construct the api with. The controller then used a respond_to method to pass the api back to the phone app with.
