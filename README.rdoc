@@ -3,8 +3,9 @@
 
 Our final team project at Makers Academy was to create a Beacon network for personalised shopping. This is the repo for the Proximibee Admin system.
 
-{Proximibee Demo}[https://youtu.be/5xSJhFoEBcs]
-{Proximibee Admin System}[https://arcane-citadel-3693.herokuapp.com]
+=== {Proximibee Demo}[https://youtu.be/5xSJhFoEBcs]
+
+=== {Proximibee Admin System}[https://arcane-citadel-3693.herokuapp.com]
 
 === What problem was being solved?
 Online shopping is great but you can't touch or try on the product and filtering your online search is a pain.  Alternatively shopping in-store allows you to sample the product but you don't know if you are getting the best deal and you have to queue to pay.
